@@ -1,7 +1,6 @@
 import characters.healers.Cleric;
 
-import components.HerbalTea;
-import components.Runestone;
+import components.HealingItemType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -10,11 +9,9 @@ import static org.junit.Assert.*;
 public class ClericTest {
 
     private Cleric cleric;
-    private HerbalTea herbalTea;
 
     @Before
     public void before() {
-        herbalTea = new HerbalTea(5);
         cleric = new Cleric("Florence", 50, "Yir healed!");
     }
 
@@ -65,44 +62,42 @@ public class ClericTest {
 
     @Test
     public void canAddHealingItem() {
-        Runestone runestone = new Runestone(25);
-        cleric.addHealingItem(runestone);
+        cleric.addHealingItem(HealingItemType.RUNESTONE);
         assertEquals(1, cleric.getInventory().size());
     }
 
     @Test
     public void canRemoveHealingItem() {
-        cleric.addHealingItem(herbalTea);
-        cleric.removeHealingItem(herbalTea);
+        cleric.addHealingItem(HealingItemType.HERBALTEA);
+        cleric.removeHealingItem(HealingItemType.HERBALTEA);
     assertEquals(0, cleric.getInventory().size());
     }
 
     @Test
     public void hasHealingItem() {
-        Runestone runestone = new Runestone(25);
-        cleric.addHealingItem(herbalTea);
-        assertTrue(cleric.hasItem(herbalTea));
-        assertFalse(cleric.hasItem(runestone));
+        cleric.addHealingItem(HealingItemType.SHINYCRYSTAL);
+        assertTrue(cleric.hasItem(HealingItemType.SHINYCRYSTAL));
+        assertFalse(cleric.hasItem(HealingItemType.RUNESTONE));
     }
 
     @Test
     public void canHeal() {
-        cleric.addHealingItem(herbalTea);
+        cleric.addHealingItem(HealingItemType.SHINYCRYSTAL);
         cleric.loseHP(20);
-        cleric.heal(cleric, herbalTea);
-        assertEquals(35, cleric.getCurrentHP());
+        cleric.heal(cleric, HealingItemType.SHINYCRYSTAL);
+        assertEquals(37, cleric.getCurrentHP());
         assertEquals(0, cleric.getInventory().size());
     }
 
     @Test
     public void healingReturnsCatchphrase() {
-        cleric.addHealingItem(herbalTea);
+        cleric.addHealingItem(HealingItemType.RUNESTONE);
         cleric.loseHP(20);
-        assertEquals("Yir healed!", cleric.heal(cleric, herbalTea));
+        assertEquals("Yir healed!", cleric.heal(cleric, HealingItemType.RUNESTONE));
     }
 
     @Test
     public void cannotHeal() {
-        assertEquals("You don't have that item", cleric.heal(cleric, herbalTea));
+        assertEquals("You don't have that item", cleric.heal(cleric, HealingItemType.RUNESTONE));
     }
 }

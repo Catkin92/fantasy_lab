@@ -1,39 +1,39 @@
 package characters.healers;
 
 import characters.Player;
-import components.HealingItem;
+import components.HealingItemType;
 
 import java.util.ArrayList;
 
 public abstract class Healer extends Player {
 
-    private ArrayList<HealingItem> inventory;
+    private ArrayList<HealingItemType> inventory;
 
     public Healer(String name, int maxHP, String catchPhrase) {
         super(name, maxHP, catchPhrase);
-        this.inventory = new ArrayList<HealingItem>();
+        this.inventory = new ArrayList<HealingItemType>();
     }
 
-    public ArrayList<HealingItem> getInventory() {
-        ArrayList<HealingItem> list = new ArrayList<HealingItem>(inventory);
+    public ArrayList<HealingItemType> getInventory() {
+        ArrayList<HealingItemType> list = new ArrayList<HealingItemType>(inventory);
         return list;
     }
 
-    public void addHealingItem(HealingItem healingItem) {
+    public void addHealingItem(HealingItemType healingItem) {
         this.inventory.add(healingItem);
     }
 
-    public void removeHealingItem(HealingItem healingItem) {
+    public void removeHealingItem(HealingItemType healingItem) {
         this.inventory.remove(healingItem);
     }
 
-    public boolean hasItem(HealingItem item) {
+    public boolean hasItem(HealingItemType item) {
         return this.inventory.contains(item);
     }
 
-    public String heal(Player character, HealingItem healingItem) {
+    public String heal(Player character, HealingItemType healingItem) {
         if(this.hasItem(healingItem)) {
-            int heal = healingItem.getHealingPower();
+            int heal = healingItem.getHealing();
             character.gainHP(heal);
 
             this.removeHealingItem(healingItem);
