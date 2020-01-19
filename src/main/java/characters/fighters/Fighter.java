@@ -1,7 +1,9 @@
-package characters;
+package characters.fighters;
 
-import components.SpellType;
+import characters.magicUsers.MagicUser;
+import characters.Player;
 import components.WeaponType;
+import interfaces.IDefend;
 
 public abstract class Fighter extends Player {
 
@@ -22,18 +24,12 @@ public abstract class Fighter extends Player {
 
     public void attack(Player character) {
 
-            if (character instanceof MagicUser) {
-                int damage = (int)(this.weapon.getDamage() * ((MagicUser) character).getCreature().getDefence());
-                character.loseHP(damage);
-            }
-
-            if (character instanceof Knight) {
-                int damage = (int)(this.weapon.getDamage() * ((Knight) character).getArmour().getDefence());
+            if (character instanceof IDefend) {
+                int damage = this.weapon.getDamage() - ((IDefend) character).defend();
                 character.loseHP(damage);
             }
             else {
                 int damage = this.weapon.getDamage();
-
                 character.loseHP(damage);
             }
         }

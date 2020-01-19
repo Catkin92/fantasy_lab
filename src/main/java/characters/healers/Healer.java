@@ -1,5 +1,6 @@
-package characters;
+package characters.healers;
 
+import characters.Player;
 import components.HealingItem;
 import interfaces.IHeal;
 

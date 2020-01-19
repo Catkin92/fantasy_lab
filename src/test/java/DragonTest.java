@@ -3,7 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+
 
 public class DragonTest {
 
@@ -11,7 +11,7 @@ public class DragonTest {
 
     @Before
     public void before() {
-        dragon = new Dragon("Snarly", 0.5, 25);
+        dragon = new Dragon("Snarly", 4, 25);
     }
 
     @Test
@@ -21,7 +21,7 @@ public class DragonTest {
 
     @Test
     public void hasDefence() {
-        assertEquals(0.5, dragon.getDefence(), 0.1);
+        assertEquals(4, dragon.getDefence());
     }
 
     @Test

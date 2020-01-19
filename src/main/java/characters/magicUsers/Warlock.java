@@ -1,5 +1,6 @@
-package characters;
+package characters.magicUsers;
 
+import characters.magicUsers.MagicUser;
 import creatures.Creature;
 
 public class Warlock extends MagicUser {

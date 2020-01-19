@@ -1,5 +1,6 @@
-package characters;
+package characters.fighters;
 
+import characters.fighters.Fighter;
 import components.WeaponType;
 
 public class Dwarf extends Fighter {

@@ -1,6 +1,6 @@
-import characters.Cleric;
-import characters.Warlock;
-import characters.Wizard;
+import characters.healers.Cleric;
+import characters.magicUsers.Warlock;
+import characters.magicUsers.Wizard;
 import components.SpellType;
 import creatures.Dragon;
 import creatures.Ogre;
@@ -19,9 +19,9 @@ public class WarlockTest {
 
     @Before
     public void before() {
-        ogre = new Ogre("Oggy", 0.4, 15);
+        ogre = new Ogre("Oggy", 6, 15);
         warlock = new Warlock("Harrion", 75, "You've been locked", ogre);
-        dragon = new Dragon("Snarly", 0.5, 25);
+        dragon = new Dragon("Snarly", 4, 25);
         wizard = new Wizard("Harry", 50, "I'm a what?", dragon);
         cleric = new Cleric("Florence", 50, "Yir healed!");
     }
@@ -87,6 +87,7 @@ public class WarlockTest {
         warlock.addSpell(SpellType.FIREBOLT);
         assertEquals(1, warlock.getSpells().size());
     }
+
     @Test
     public void canAttack() {
         warlock.addSpell(SpellType.FIREBOLT);
@@ -98,6 +99,6 @@ public class WarlockTest {
     public void magicUserOpponentCanDefend() {
         warlock.addSpell(SpellType.FIREBOLT);
         warlock.attack(wizard, SpellType.FIREBOLT);
-        assertEquals(40, wizard.getCurrentHP());
+        assertEquals(34, wizard.getCurrentHP());
     }
 }

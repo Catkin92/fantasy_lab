@@ -1,8 +1,7 @@
-import characters.Cleric;
-import characters.Knight;
-import characters.Wizard;
+import characters.healers.Cleric;
+import characters.fighters.Knight;
+import characters.magicUsers.Wizard;
 import components.ArmourType;
-import components.SpellType;
 import components.WeaponType;
 import creatures.Dragon;
 import org.junit.Before;
@@ -20,7 +19,7 @@ public class KnightTest {
     @Before
     public void before() {
         knight = new Knight("Sir Killalot", 150, "Stabby stabby", WeaponType.SWORD, ArmourType.ADAMANTIUM);
-        dragon = new Dragon("Snarly", 0.5, 25);
+        dragon = new Dragon("Snarly", 4, 25);
         wizard = new Wizard("Harry", 50, "I'm a what?", dragon);
         cleric = new Cleric("Florence", 50, "Yir healed!");
     }
@@ -95,7 +94,7 @@ public class KnightTest {
     @Test
     public void magicUserOpponentCanDefend() {
         knight.attack(wizard);
-        assertEquals(40, wizard.getCurrentHP());
+        assertEquals(34, wizard.getCurrentHP());
     }
 
 }

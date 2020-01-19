@@ -1,7 +1,6 @@
-package characters;
+package characters.healers;
 
-import components.HealingItem;
-import interfaces.IHeal;
+import characters.healers.Healer;
 
 public class Cleric extends Healer {
 

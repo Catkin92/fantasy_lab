@@ -3,10 +3,10 @@ package creatures;
 public abstract class Creature {
 
     private String name;
-    private double defence;
+    private int defence;
     private int attack;
 
-    public Creature(String name, double defence, int attack) {
+    public Creature(String name, int defence, int attack) {
         this.name = name;
         this.defence = defence;
         this.attack = attack;
@@ -16,11 +16,12 @@ public abstract class Creature {
         return this.name;
     };
 
-    public double getDefence() {
+    public int getDefence() {
         return this.defence;
     };
 
     public int getAttack() {
         return this.attack;
     };
+
 }

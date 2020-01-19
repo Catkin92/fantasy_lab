@@ -1,4 +1,4 @@
-import characters.Cleric;
+import characters.healers.Cleric;
 
 import components.HerbalTea;
 import components.Runestone;

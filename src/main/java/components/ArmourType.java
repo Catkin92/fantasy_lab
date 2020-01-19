@@ -2,18 +2,18 @@ package components;
 
 public enum ArmourType {
 
-    GOLD(0.9),
-    IRON(0.7),
-    ADAMANTIUM(0.5);
+    GOLD(1),
+    IRON(2),
+    ADAMANTIUM(4);
 
 
-    private final double defence;
+    private final int defence;
 
-    ArmourType(double defence) {
+    ArmourType(int defence) {
         this.defence = defence;
     }
 
-    public double getDefence() {
+    public int getDefence() {
         return this.defence;
     }
 }

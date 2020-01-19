@@ -1,9 +1,11 @@
-package characters;
+package characters.fighters;
 
+import characters.fighters.Fighter;
 import components.ArmourType;
 import components.WeaponType;
+import interfaces.IDefend;
 
-public class Knight extends Fighter{
+public class Knight extends Fighter implements IDefend {
 
     private ArmourType armour;
 
@@ -18,5 +20,9 @@ public class Knight extends Fighter{
 
     public void setArmour(ArmourType armour) {
         this.armour = armour;
+    }
+
+    public int defend() {
+        return this.armour.getDefence();
     }
 }

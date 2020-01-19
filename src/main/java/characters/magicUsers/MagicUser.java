@@ -1,14 +1,15 @@
-package characters;
+package characters.magicUsers;
 
+import characters.Player;
 import components.SpellType;
 import creatures.Creature;
-import interfaces.IZap;
+import interfaces.IDefend;
 
 
 import java.util.ArrayList;
 
 
-public abstract class MagicUser extends Player implements IZap {
+public abstract class MagicUser extends Player implements IDefend {
 
     private ArrayList<SpellType> spells;
     private Creature creature;
@@ -36,16 +37,18 @@ public abstract class MagicUser extends Player implements IZap {
         this.spells.add(spell);
     }
 
+    public int defend() {
+        return this.creature.getDefence();
+    }
+
     public void attack(Player character, SpellType spell) {
         if(this.spells.contains(spell)) {
-            if (character instanceof MagicUser) {
-                int damage = (int)(spell.getDamage() * ((MagicUser) character).getCreature().getDefence());
-                character.loseHP(damage);
-            }
-            else {
-                int damage = spell.getDamage();
 
-            character.loseHP(damage);
+            if (character instanceof IDefend) {
+                int damage = spell.getDamage() - ((IDefend) character).defend();
+                character.loseHP(damage);
+            } else {
+                character.loseHP(spell.getDamage());
             }
         }
     }
