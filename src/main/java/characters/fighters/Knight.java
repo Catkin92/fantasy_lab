@@ -1,6 +1,5 @@
 package characters.fighters;
 
-import characters.fighters.Fighter;
 import components.ArmourType;
 import components.WeaponType;
 import interfaces.IDefend;

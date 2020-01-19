@@ -74,7 +74,9 @@ public class KnightTest {
         knight.setWeapon(WeaponType.AXE);
         assertEquals(WeaponType.AXE, knight.getWeapon());
 
-    }@Test
+    }
+
+    @Test
     public void hasArmour() {
         assertEquals(ArmourType.ADAMANTIUM, knight.getArmour());
     }
