@@ -2,11 +2,10 @@ package characters.healers;
 
 import characters.Player;
 import components.HealingItem;
-import interfaces.IHeal;
 
 import java.util.ArrayList;
 
-public abstract class Healer extends Player implements IHeal {
+public abstract class Healer extends Player {
 
     private ArrayList<HealingItem> inventory;
 
