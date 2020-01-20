@@ -19,9 +19,9 @@ public class WarlockTest {
 
     @Before
     public void before() {
-        ogre = new Ogre("Oggy", 6, 15);
+        ogre = new Ogre("Oggy", 6, 15, 20);
         warlock = new Warlock("Harrion", 75, "You've been locked", ogre);
-        dragon = new Dragon("Snarly", 4, 25);
+        dragon = new Dragon("Snarly", 4, 25, 30);
         wizard = new Wizard("Harry", 50, "I'm a what?", dragon);
         cleric = new Cleric("Florence", 50, "Yir healed!");
     }

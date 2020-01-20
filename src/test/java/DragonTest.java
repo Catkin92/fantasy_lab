@@ -11,7 +11,7 @@ public class DragonTest {
 
     @Before
     public void before() {
-        dragon = new Dragon("Snarly", 4, 25);
+        dragon = new Dragon("Snarly", 4, 25, 30);
     }
 
     @Test

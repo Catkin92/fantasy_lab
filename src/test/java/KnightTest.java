@@ -19,7 +19,7 @@ public class KnightTest {
     @Before
     public void before() {
         knight = new Knight("Sir Killalot", 150, "Stabby stabby", WeaponType.SWORD, ArmourType.ADAMANTIUM);
-        dragon = new Dragon("Snarly", 4, 25);
+        dragon = new Dragon("Snarly", 4, 25, 15);
         wizard = new Wizard("Harry", 50, "I'm a what?", dragon);
         cleric = new Cleric("Florence", 50, "Yir healed!");
     }

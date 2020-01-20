@@ -19,8 +19,8 @@ public class WizardTest {
 
     @Before
     public void before() {
-        ogre = new Ogre("Oggy", 6, 15);
-        dragon = new Dragon("Snarly", 4, 25);
+        ogre = new Ogre("Oggy", 6, 15, 15);
+        dragon = new Dragon("Snarly", 4, 25, 20);
         wizard = new Wizard("Harry", 50, "I'm a what?", ogre);
         knight = new Knight("Eugene", 40, "Die die die!", WeaponType.AXE, ArmourType.IRON);
     }

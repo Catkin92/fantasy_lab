@@ -11,7 +11,7 @@ public class OgreTest {
 
     @Before
     public void before() {
-        ogre = new Ogre("Shrek", 3, 15);
+        ogre = new Ogre("Shrek", 3, 15, 20);
     }
 
     @Test
@@ -27,6 +27,11 @@ public class OgreTest {
     @Test
     public void hasAttack() {
         assertEquals(15, ogre.getAttack());
+    }
+
+    @Test
+    public void hasMaxHP() {
+        assertEquals(20, ogre.getMaxHP());
     }
 }
 
