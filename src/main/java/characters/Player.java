@@ -6,12 +6,14 @@ public abstract class Player {
     private int maxHP;
     private int currentHP;
     private String catchPhrase;
+    private int gold;
 
     public Player(String name, int maxHP, String catchPhrase) {
         this.name = name;
         this.maxHP = maxHP;
         this.currentHP = maxHP;
         this.catchPhrase = catchPhrase;
+        this.gold = 0;
     }
 
     public String getName() {
@@ -28,6 +30,14 @@ public abstract class Player {
 
     public String getCatchPhrase() {
         return this.catchPhrase;
+    }
+
+    public int getGold() {
+        return this.gold;
+    }
+
+    public void addGold(int gold) {
+        this.gold += gold;
     }
 
     public void loseHP(int damage) {
